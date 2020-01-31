@@ -1,6 +1,16 @@
 {{ define "main" }}
     <main aria-role="main">
         <div>
+            .Site.RegularPages:
+            <ul>
+                {{- $paginator := .Paginate (.Site.RegularPages) }}
+                {{- range $paginator.Pages }}
+                    <li>
+                        {{- .Permalink }}
+                        {{- .Title }}
+                    </li>
+                {{- end }}
+            </ul>
             .Pages:
             <ul>
                 {{- $paginatorP := .Paginate (.Pages) }}
