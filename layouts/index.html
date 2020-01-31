@@ -1,0 +1,16 @@
+{{ define "main" }}
+    <main aria-role="main">
+        <div>
+            .Pages:
+            <ul>
+                {{- $paginatorP := .Paginate (.Pages) }}
+                {{- range $paginatorP.Pages }}
+                    <li>
+                        {{- .Permalink }}
+                        {{- .Title }}
+                    </li>
+                {{- end }}
+            </ul>
+        </div>
+    </main>
+{{ end }}
