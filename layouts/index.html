@@ -11,6 +11,16 @@
                     </li>
                 {{- end }}
             </ul>
+            .Site.RegularPages:
+            <ul>
+                {{- $paginator := .Paginate (.Site.RegularPages) }}
+                {{- range $paginator.Pages }}
+                    <li>
+                        {{- .Permalink }}
+                        {{- .Title }}
+                    </li>
+                {{- end }}
+            </ul>
         </div>
     </main>
 {{ end }}
